@@ -6,4 +6,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let c of countries">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text>
+              {{c.name}}
+            </ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <img [src]="c.flag" />
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text>{{c.capital}}</ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-badge *ngFor="let lng of c.languages">{{lng.name}}</ion-badge>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
